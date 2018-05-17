@@ -35,7 +35,7 @@ fin exec "hugo new site . --force"
 # Create a test post
 fin exec hugo new posts/my-first-post.md
 fin exec hugo undraft content/posts/my-first-post.md
-echo -e "Hello, Hugo on Docksal!" >> "content/posts/my-first-post.md"
+fin exec 'echo -e "Hello, Hugo on Docksal!" >> "content/posts/my-first-post.md"'
 
 # Download a theme
 echo-green "Downloading a theme..."
