@@ -21,10 +21,11 @@ STATIC_URL="http://static.${VIRTUAL_HOST}"
 cd "$PROJECT_ROOT"
 
 # Reset everything as usual
-fin project reset --force
+fin project reset -f
 
 # Cleanup everything except '.' '..' '.docksal'
-echo-yellow "${red}WARNING: ${yellow}Removing ALL changes to current project. Press Enter to continue or Ctrl-C to cancel..."
+echo-yellow "${red}WARNING: ${yellow}Removing ALL changes to current project in 5 seconds. Press Ctrl-C to cancel..."
+sleep 5
 read -p ''
 ls -1a | grep -v "\.$" | grep -v '.docksal' | grep -v "README\.md" | xargs rm -rf
 
