@@ -18,12 +18,9 @@ services:
     labels:
       - io.docksal.virtual-host=${VIRTUAL_HOST},*.${VIRTUAL_HOST}
       - io.docksal.project-root=${PROJECT_ROOT}
+      - io.docksal.virtual-port=1313
     # Add custom image
     image: docksal/cli:hugo-0.34
     build: ${PROJECT_ROOT}/.docksal/services/cli
-    # Expose hugo port
     expose:
       - 1313
-    # Tell docksal-vhost-proxy to route to this port
-    environment:
-      - VIRTUAL_PORT=1313
