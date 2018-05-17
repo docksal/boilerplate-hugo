@@ -26,7 +26,6 @@ fin project reset -f
 # Cleanup everything except '.' '..' '.docksal'
 echo-yellow "${red}WARNING: ${yellow}Removing ALL changes to current project in 5 seconds. Press Ctrl-C to cancel..."
 sleep 5
-read -p ''
 ls -1a | grep -v "\.$" | grep -v '.docksal' | grep -v "README\.md" | xargs rm -rf
 
 # Create new hugo site
