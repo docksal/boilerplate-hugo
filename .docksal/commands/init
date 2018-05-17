@@ -21,7 +21,7 @@ STATIC_URL="http://static.${VIRTUAL_HOST}"
 cd "$PROJECT_ROOT"
 
 # Reset everything as usual
-fin reset
+fin project reset --force
 
 # Cleanup everything except '.' '..' '.docksal'
 echo-yellow "${red}WARNING: ${yellow}Removing ALL changes to current project. Press Enter to continue or Ctrl-C to cancel..."
