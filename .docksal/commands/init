@@ -34,13 +34,12 @@ fin exec "hugo new site . --force"
 
 # Create a test post
 fin exec hugo new posts/my-first-post.md
-fin exec hugo undraft content/posts/my-first-post.md
 fin exec 'echo -e "Hello, Hugo on Docksal!" >> "content/posts/my-first-post.md"'
 
 # Download a theme
 echo-green "Downloading a theme..."
 sleep 1
-fin exec git init 
+fin exec git init
 fin exec git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 
 # Enable theme
@@ -48,7 +47,7 @@ echo 'theme = "ananke"' >> config.toml
 
 # Compile static site
 echo-green "Compiling a static site..."
-fin exec hugo --baseURL "${STATIC_URL}"
+fin exec hugo --baseURL "${STATIC_URL}" --buildDrafts
 
 # Done
 sleep 1
